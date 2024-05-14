@@ -173,6 +173,7 @@ class ObjectViewController: NSViewController, AVCaptureVideoDataOutputSampleBuff
         session.commitConfiguration()
         previewLayer = AVCaptureVideoPreviewLayer(session: session)
         previewLayer.videoGravity = AVLayerVideoGravity.resizeAspectFill
+        view.frame = NSRect(x: 0, y: 0, width: 640, height: 480)
         view.layer = view.makeBackingLayer()
         previewLayer.frame = view.layer!.bounds
         view.layer!.addSublayer(previewLayer)

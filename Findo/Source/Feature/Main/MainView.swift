@@ -10,6 +10,7 @@ import SwiftUI
 struct MainView: View {
     var body: some View {
         ObjectView()
+            .frame(width: 640, height: 480)
     }
 }
 
