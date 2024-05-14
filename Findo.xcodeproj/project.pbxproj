@@ -7,19 +7,25 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		93BE73502BF3322A00C43D42 /* FindoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93BE734F2BF3322A00C43D42 /* FindoApp.swift */; };
-		93BE73522BF3322A00C43D42 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93BE73512BF3322A00C43D42 /* ContentView.swift */; };
+		93BE73502BF3322A00C43D42 /* AppMain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93BE734F2BF3322A00C43D42 /* AppMain.swift */; };
+		93BE73522BF3322A00C43D42 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93BE73512BF3322A00C43D42 /* MainView.swift */; };
 		93BE73542BF3322C00C43D42 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 93BE73532BF3322C00C43D42 /* Assets.xcassets */; };
-		93BE73572BF3322C00C43D42 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 93BE73562BF3322C00C43D42 /* Preview Assets.xcassets */; };
+		93BE735F2BF3366D00C43D42 /* ObjectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93BE735E2BF3366D00C43D42 /* ObjectView.swift */; };
+		93BE73612BF3385500C43D42 /* ObjectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93BE73602BF3385500C43D42 /* ObjectViewController.swift */; };
+		93BE73642BF33CA600C43D42 /* ObjectDetector.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 93BE73632BF33CA600C43D42 /* ObjectDetector.mlmodel */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		93BE734C2BF3322A00C43D42 /* Findo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Findo.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		93BE734F2BF3322A00C43D42 /* FindoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindoApp.swift; sourceTree = "<group>"; };
-		93BE73512BF3322A00C43D42 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		93BE734F2BF3322A00C43D42 /* AppMain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppMain.swift; sourceTree = "<group>"; };
+		93BE73512BF3322A00C43D42 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		93BE73532BF3322C00C43D42 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		93BE73562BF3322C00C43D42 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		93BE73582BF3322C00C43D42 /* Findo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Findo.entitlements; sourceTree = "<group>"; };
+		93BE735E2BF3366D00C43D42 /* ObjectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectView.swift; sourceTree = "<group>"; };
+		93BE73602BF3385500C43D42 /* ObjectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectViewController.swift; sourceTree = "<group>"; };
+		93BE73622BF33B7A00C43D42 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		93BE73632BF33CA600C43D42 /* ObjectDetector.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = ObjectDetector.mlmodel; sourceTree = "<group>"; };
+		93BE736B2BF33EBF00C43D42 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -36,6 +42,7 @@
 		93BE73432BF3322A00C43D42 = {
 			isa = PBXGroup;
 			children = (
+				93BE736B2BF33EBF00C43D42 /* README.md */,
 				93BE734E2BF3322A00C43D42 /* Findo */,
 				93BE734D2BF3322A00C43D42 /* Products */,
 			);
@@ -52,21 +59,64 @@
 		93BE734E2BF3322A00C43D42 /* Findo */ = {
 			isa = PBXGroup;
 			children = (
-				93BE734F2BF3322A00C43D42 /* FindoApp.swift */,
-				93BE73512BF3322A00C43D42 /* ContentView.swift */,
-				93BE73532BF3322C00C43D42 /* Assets.xcassets */,
-				93BE73582BF3322C00C43D42 /* Findo.entitlements */,
-				93BE73552BF3322C00C43D42 /* Preview Content */,
+				93BE73652BF33DE800C43D42 /* Resource */,
+				93BE73662BF33E2700C43D42 /* Source */,
 			);
 			path = Findo;
 			sourceTree = "<group>";
 		};
-		93BE73552BF3322C00C43D42 /* Preview Content */ = {
+		93BE73652BF33DE800C43D42 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
-				93BE73562BF3322C00C43D42 /* Preview Assets.xcassets */,
+				93BE73582BF3322C00C43D42 /* Findo.entitlements */,
+				93BE73622BF33B7A00C43D42 /* Info.plist */,
+				93BE73632BF33CA600C43D42 /* ObjectDetector.mlmodel */,
+				93BE73532BF3322C00C43D42 /* Assets.xcassets */,
 			);
-			path = "Preview Content";
+			path = Resource;
+			sourceTree = "<group>";
+		};
+		93BE73662BF33E2700C43D42 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				93BE73682BF33E2E00C43D42 /* Application */,
+				93BE73672BF33E2C00C43D42 /* Feature */,
+			);
+			path = Source;
+			sourceTree = "<group>";
+		};
+		93BE73672BF33E2C00C43D42 /* Feature */ = {
+			isa = PBXGroup;
+			children = (
+				93BE73692BF33E3700C43D42 /* Main */,
+				93BE736A2BF33E4500C43D42 /* ObjectView */,
+			);
+			path = Feature;
+			sourceTree = "<group>";
+		};
+		93BE73682BF33E2E00C43D42 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				93BE734F2BF3322A00C43D42 /* AppMain.swift */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		93BE73692BF33E3700C43D42 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				93BE73512BF3322A00C43D42 /* MainView.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		93BE736A2BF33E4500C43D42 /* ObjectView */ = {
+			isa = PBXGroup;
+			children = (
+				93BE735E2BF3366D00C43D42 /* ObjectView.swift */,
+				93BE73602BF3385500C43D42 /* ObjectViewController.swift */,
+			);
+			path = ObjectView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -127,7 +177,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				93BE73572BF3322C00C43D42 /* Preview Assets.xcassets in Resources */,
 				93BE73542BF3322C00C43D42 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -139,8 +188,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				93BE73522BF3322A00C43D42 /* ContentView.swift in Sources */,
-				93BE73502BF3322A00C43D42 /* FindoApp.swift in Sources */,
+				93BE73522BF3322A00C43D42 /* MainView.swift in Sources */,
+				93BE73502BF3322A00C43D42 /* AppMain.swift in Sources */,
+				93BE735F2BF3366D00C43D42 /* ObjectView.swift in Sources */,
+				93BE73612BF3385500C43D42 /* ObjectViewController.swift in Sources */,
+				93BE73642BF33CA600C43D42 /* ObjectDetector.mlmodel in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -200,7 +252,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
-				MACOSX_DEPLOYMENT_TARGET = 14.4;
+				MACOSX_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -257,7 +309,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
-				MACOSX_DEPLOYMENT_TARGET = 14.4;
+				MACOSX_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = macosx;
@@ -270,22 +322,26 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = Findo/Findo.entitlements;
+				CODE_SIGN_ENTITLEMENTS = Findo/Resource/Findo.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"Findo/Preview Content\"";
 				DEVELOPMENT_TEAM = 56V747V83R;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Findo/Resource/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Findo;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.video";
+				INFOPLIST_KEY_NSCameraUsageDescription = "도현욱을 찾기 위해 카메라를 사용합니다!";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
+				MACOSX_DEPLOYMENT_TARGET = 12;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = kr.hyunwook.Findo;
+				PRODUCT_BUNDLE_IDENTIFIER = kr.hyunwook.findo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -297,22 +353,26 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = Findo/Findo.entitlements;
+				CODE_SIGN_ENTITLEMENTS = Findo/Resource/Findo.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"Findo/Preview Content\"";
 				DEVELOPMENT_TEAM = 56V747V83R;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Findo/Resource/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Findo;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.video";
+				INFOPLIST_KEY_NSCameraUsageDescription = "도현욱을 찾기 위해 카메라를 사용합니다!";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
+				MACOSX_DEPLOYMENT_TARGET = 12;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = kr.hyunwook.Findo;
+				PRODUCT_BUNDLE_IDENTIFIER = kr.hyunwook.findo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
