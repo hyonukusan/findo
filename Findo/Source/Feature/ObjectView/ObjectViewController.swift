@@ -49,7 +49,7 @@ class ObjectViewController: NSViewController, AVCaptureVideoDataOutputSampleBuff
             withExtension: "mlmodelc"
         ) else {
             return NSError(
-                domain: "VisionObjectRecognitionViewController",
+                domain: "ObjectViewController",
                 code: -1,
                 userInfo: [NSLocalizedDescriptionKey: "Model file is missing"]
             )
@@ -87,7 +87,10 @@ class ObjectViewController: NSViewController, AVCaptureVideoDataOutputSampleBuff
                 Int(bufferSize.height)
             )
             
-            let shapeLayer = self.createRoundedRectLayerWithBounds(objectBounds)
+            let shapeLayer = self.createRoundedRectLayerWithBounds(
+                objectBounds,
+                identifier: topLabelObservation.identifier
+            )
             
             let textLayer = self.createTextSubLayerInBounds(
                 objectBounds,
@@ -234,7 +237,7 @@ class ObjectViewController: NSViewController, AVCaptureVideoDataOutputSampleBuff
         let textLayer = CATextLayer()
         textLayer.name = "Object Label"
         let formattedString = NSMutableAttributedString(
-            string: String(format: "\(identifier)\nConfidence:  %.2f", confidence)
+            string: String(format: "\(identifier)\n일치율: %.2f", confidence)
         )
         let largeFont = NSFont(name: "Helvetica", size: 24.0)!
         formattedString.addAttributes(
@@ -249,8 +252,6 @@ class ObjectViewController: NSViewController, AVCaptureVideoDataOutputSampleBuff
             height: bounds.size.width - 10
         )
         textLayer.position = CGPoint(x: bounds.midX, y: bounds.midY)
-        textLayer.shadowOpacity = 0.7
-        textLayer.shadowOffset = CGSize(width: 2, height: 2)
         textLayer.foregroundColor = CGColor(
             colorSpace: CGColorSpaceCreateDeviceRGB(),
             components: [0.0, 0.0, 0.0, 1.0]
@@ -263,14 +264,18 @@ class ObjectViewController: NSViewController, AVCaptureVideoDataOutputSampleBuff
         return textLayer
     }
     
-    func createRoundedRectLayerWithBounds(_ bounds: CGRect) -> CALayer {
+    func createRoundedRectLayerWithBounds(
+        _ bounds: CGRect,
+        identifier: String
+    ) -> CALayer {
         let shapeLayer = CALayer()
         shapeLayer.bounds = bounds
         shapeLayer.position = CGPoint(x: bounds.midX, y: bounds.midY)
         shapeLayer.name = "Found Object"
-        shapeLayer.backgroundColor = CGColor(
+        shapeLayer.borderWidth = 5.0
+        shapeLayer.borderColor = CGColor(
             colorSpace: CGColorSpaceCreateDeviceRGB(),
-            components: [1.0, 1.0, 0.2, 0.4]
+            components: [1.0, 1.0, 0.2, 1.0]
         )
         shapeLayer.cornerRadius = 7
         return shapeLayer
