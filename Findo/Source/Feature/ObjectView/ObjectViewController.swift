@@ -97,8 +97,10 @@ class ObjectViewController: NSViewController, AVCaptureVideoDataOutputSampleBuff
                 identifier: topLabelObservation.identifier,
                 confidence: topLabelObservation.confidence
             )
-            shapeLayer.addSublayer(textLayer)
-            detectionOverlay.addSublayer(shapeLayer)
+            if topLabelObservation.confidence >= 0.975 {
+                shapeLayer.addSublayer(textLayer)
+                detectionOverlay.addSublayer(shapeLayer)
+            }
         }
         self.updateLayerGeometry()
         CATransaction.commit()
@@ -236,13 +238,31 @@ class ObjectViewController: NSViewController, AVCaptureVideoDataOutputSampleBuff
     ) -> CATextLayer {
         let textLayer = CATextLayer()
         textLayer.name = "Object Label"
+        let getFullName = {
+            switch identifier {
+            case "Sang":
+                return "박상현"
+            case "Do":
+                return "도현욱"
+            case "Gun":
+                return "하건록"
+            default:
+                return "예외"
+            }
+        }()
+        let confidencePercentage = Int(confidence * 100)
         let formattedString = NSMutableAttributedString(
-            string: String(format: "\(identifier)\n일치율: %.2f", confidence)
+            string: "사람: \(getFullName)\n일치율: \(confidencePercentage)%"
         )
-        let largeFont = NSFont(name: "Helvetica", size: 24.0)!
+        let largeFont = NSFont(name: "Helvetica", size: 50.0)!
+        let normalFont = NSFont(name: "Helvetica", size: 40.0)!
         formattedString.addAttributes(
             [NSAttributedString.Key.font: largeFont],
-            range: NSRange(location: 0, length: identifier.count)
+            range: NSRange(location: 0, length: "사람: \(getFullName)".count)
+        )
+        formattedString.addAttributes(
+            [NSAttributedString.Key.font: normalFont],
+            range: NSRange(location: "사람: \(getFullName) ".count, length: "일치율: \(confidencePercentage)%".count)
         )
         textLayer.string = formattedString
         textLayer.bounds = CGRect(
@@ -262,6 +282,7 @@ class ObjectViewController: NSViewController, AVCaptureVideoDataOutputSampleBuff
                 .scaledBy(x: 1.0, y: -1.0)
         )
         return textLayer
+
     }
     
     func createRoundedRectLayerWithBounds(
