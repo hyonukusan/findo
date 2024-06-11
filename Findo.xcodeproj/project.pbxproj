@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		523C21EA2C18092900005EC6 /* FindoObjectDetector.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 523C21E92C18092900005EC6 /* FindoObjectDetector.mlmodel */; };
 		93BE73502BF3322A00C43D42 /* AppMain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93BE734F2BF3322A00C43D42 /* AppMain.swift */; };
 		93BE73522BF3322A00C43D42 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93BE73512BF3322A00C43D42 /* MainView.swift */; };
 		93BE73542BF3322C00C43D42 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 93BE73532BF3322C00C43D42 /* Assets.xcassets */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		523C21E92C18092900005EC6 /* FindoObjectDetector.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = FindoObjectDetector.mlmodel; sourceTree = "<group>"; };
 		93BE734C2BF3322A00C43D42 /* Findo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Findo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		93BE734F2BF3322A00C43D42 /* AppMain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppMain.swift; sourceTree = "<group>"; };
 		93BE73512BF3322A00C43D42 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
@@ -69,6 +71,7 @@
 		93BE73652BF33DE800C43D42 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				523C21E92C18092900005EC6 /* FindoObjectDetector.mlmodel */,
 				93BE73582BF3322C00C43D42 /* Findo.entitlements */,
 				93BE73622BF33B7A00C43D42 /* Info.plist */,
 				93BE73532BF3322C00C43D42 /* Assets.xcassets */,
@@ -191,6 +194,7 @@
 			files = (
 				93BE73522BF3322A00C43D42 /* MainView.swift in Sources */,
 				93BE73502BF3322A00C43D42 /* AppMain.swift in Sources */,
+				523C21EA2C18092900005EC6 /* FindoObjectDetector.mlmodel in Sources */,
 				93BE735F2BF3366D00C43D42 /* ObjectView.swift in Sources */,
 				93BE73612BF3385500C43D42 /* ObjectViewController.swift in Sources */,
 			);
@@ -326,7 +330,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 56V747V83R;
+				DEVELOPMENT_TEAM = H4CNC953L3;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -357,7 +361,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 56V747V83R;
+				DEVELOPMENT_TEAM = H4CNC953L3;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;

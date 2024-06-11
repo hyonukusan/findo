@@ -45,7 +45,7 @@ class ObjectViewController: NSViewController, AVCaptureVideoDataOutputSampleBuff
         let error: NSError! = nil
         
         guard let modelURL = Bundle.main.url(
-            forResource: "ObjectDetector",
+            forResource: "FindoObjectDetector",
             withExtension: "mlmodelc"
         ) else {
             return NSError(
